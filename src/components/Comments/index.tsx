@@ -14,7 +14,7 @@ function Coments() {
         arrows: false
     };
     return (
-        <CommentsContainer>
+        <CommentsContainer id='scrollComentarios'>
             <CommentsSubContainer>
                 <CommentsFiveStars>
                     <StarsText>Somos nota <strong>máxima</strong> <br></br>nas avaliações do <strong>Google</strong></StarsText>
@@ -46,8 +46,8 @@ function Coments() {
                                 <UserName>João Vitor Pardal</UserName>
                                 <img src="https://lh3.googleusercontent.com/a-/ALV-UjW5AjYRT2mU-g6HSculmb_o7vjdAGoYRJWvyo6uqyM5QtN1=w120-h120-p-rp-mo-br100" alt="SVG" />
                                 <UserComment>Atendimento nota 10!
-                                Profissionais altamente capacitados
-                                Recomendo muito!
+                                    Profissionais altamente capacitados
+                                    Recomendo muito!
                                 </UserComment>
                             </UsersCard>
                             <UsersCard>

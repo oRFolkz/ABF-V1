@@ -1,8 +1,8 @@
 import React from 'react'
 import { GlobalCss } from './styles.ts'
-import Home from './components/Home/index.tsx'
-import Banner from './components/Banner/index.tsx'
-import Partners from './components/Partners/index.tsx'
+import { ContextProvider } from './components/Context.js';
+import NavBar from './components/NavBar/index.tsx'
+import Banner from './components/BackGroundImgs/index.tsx'
 import Coments from './components/Comments/index.tsx'
 import SkillCards from './components/SkillCards/index.tsx'
 import Location from './components/Location/index.tsx'
@@ -11,16 +11,16 @@ import Services from './components/Services/index.tsx'
 
 function App() {
     return (
-        <>
+        <ContextProvider>
             <GlobalCss />
-            <Home />
+            <NavBar />
             <Banner />
             <Services />
             <Coments />
             <SkillCards />
             <Location />
             <HoverCircle />
-        </>
+        </ContextProvider>
     )
 }
 export default App

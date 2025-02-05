@@ -5,11 +5,35 @@ export const CircleContainer = styled.div`
     cursor: pointer;
     position: fixed;
     z-index: 999;
-    bottom: 150px;
+    bottom: 170px;
     left: 0px;
     padding-left: 1rem;
     height: 0px;
 `
+
+export const CircleContainerUP = styled.div`
+    cursor: pointer;
+    position: fixed;
+    z-index: 999;
+    bottom: 98px;
+    right: 10px;
+    padding-left: 1rem;
+    height: 0px;
+    display: none;
+
+    &.active {
+        display: block;
+        animation: opacityUP 1s ease;
+
+        @keyframes opacityUP {
+            0% { opacity: 0; }
+            20% { opacity: 0; }
+            60% { opacity: .6; }
+            100% { opacity: 1; }
+        }
+    }
+`
+
 export const Link = styled.a`
     text-decoration: none;
 `
@@ -105,5 +129,32 @@ export const BubbleTextInsta = styled.div`
         width: auto;
         font-size: 1rem;
         font-weight: 600;
+    }
+`
+
+export const BubbleTextUP = styled.div`
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    border-radius: 50%;
+    transition: all .3s;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    border: 2px solid ${colors.gold};
+    transition: all 1s ease;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+    i {
+        color: ${colors.grey};
+        font-size: 2rem;
+        height: 35px;
+        transform: scale(1.05) !important;
     }
 `

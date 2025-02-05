@@ -1,20 +1,21 @@
 import React, { useState } from 'react'
-import { ServicesBackground, ServicesContainer, ServicesCard, ClickAnimation, BtnMore, ServiceCardTitle, ServiceIcon, ServiceCardText, ServiceImg, ActiveText, VideoCard, SkillsCard, ActiveEntreEmContato } from './styles.ts'
+import { ServicesBackground, ServicesContainer, ServicesCard, ClickAnimation, ServiceCardTitle, ServiceIcon, ServiceCardText, ServiceImg, ActiveText, VideoCard, SkillsCard, ActiveEntreEmContato } from './styles.ts'
 
-import ImgHenrique from '../imgs/henrique/Henrique6.png'
-import ImgAna from '../imgs/anaF/anaF.png'
-import ImgGabriele from '../imgs/gabriele/gabriele1.jpg'
-import ImgLarissa from '../imgs/larissa/larissa.png'
+import ImgHenrique from '../assets/imgs/henrique/Henrique6.png'
+import ImgAna from '../assets/imgs/anaF/anaF.png'
+import ImgGabriele from '../assets/imgs/gabriele/gabriele1.jpg'
+import ImgLarissa from '../assets/imgs/larissa/larissa.png'
 
-import clickImg from '../imgs/clickImg.png'
+import clickImg from '../assets/imgs/clickImg.png'
 
-import henriqueVideo from '../video/henriqueVideo.mp4'
-import anaVideo from '../video/anaVideo.mp4'
-import gabiVideo from '../video/gabiVideo.mp4'
-import larissaVideo from '../video/larissaVideo.mp4'
+import henriqueVideo from '../assets/video/henriqueVideo.mp4'
+import anaVideo from '../assets/video/anaVideo.mp4'
+import gabiVideo from '../assets/video/gabiVideo.mp4'
+import larissaVideo from '../assets/video/larissaVideo.mp4'
 
 const info = [{
     id: 1,
+    icone: <i className="fa-solid fa-handcuffs"></i>,
     title: 'Criminal',
     text: 'Defesa jurídica especializada em crime econômico, financeiro, tributário, licitatório,  organização criminosa, tráfico de drogas, e outros',
     activeName: <h1>Dr. HENRIQUE FERNANDES DE CASTRO</h1>,
@@ -27,6 +28,7 @@ const info = [{
 },
 {
     id: 2,
+    icone: <i className="fa-solid fa-book"></i>,
     title: 'Trabalhista',
     text: 'Defesa jurídica especializada em crime econômico, financeiro, tributário, licitatório,  organização criminosa, tráfico de drogas, e outros',
     activeName: <h1>Dra. ANA FLAVIA ALVES</h1>,
@@ -39,6 +41,7 @@ const info = [{
 },
 {
     id: 3,
+    icone: <i className="fa-solid fa-scale-balanced"></i>,
     title: 'Trabalhista',
     text: 'Defesa jurídica especializada em crime econômico, financeiro, tributário, licitatório,  organização criminosa, tráfico de drogas, e outros',
     activeName: <h1>Dra. GABRIELE FERREIRA BEIRIGO</h1>,
@@ -51,6 +54,7 @@ const info = [{
 },
 {
     id: 4,
+    icone: <i className="fa-solid fa-people-roof"></i>,
     title: 'Trabalhista',
     text: 'Defesa jurídica especializada em crime econômico, financeiro, tributário, licitatório,  organização criminosa, tráfico de drogas, e outros',
     activeName: <h1>Dra. LARISSA SCANDOLARI ALTIERI</h1>,
@@ -73,12 +77,13 @@ function Services() {
                     <ServicesCard
                         key={service.id}
                         onClick={() => activeCard === service.id ? null : setActiveCard(activeCard === service.id ? null : service.id)}
-                        className={activeCard === service.id ? 'active' : ''}>
+                        className={activeCard === service.id ? 'active' : ''}
+                        id='scrollServices' >
                         {activeCard === service.id ? (
                             <>
                                 {service.video && (
                                     <VideoCard>
-                                        <video loop autoPlay={activeCard === service.id}>
+                                        <video loop autoPlay={activeCard === service.id} muted>
                                             <source src={service.video} type="video/mp4" />
                                             Your browser does not support the video tag.
                                         </video>
@@ -112,7 +117,7 @@ function Services() {
                             </ServiceImg>
                         )}
                         <ServiceIcon>
-                            <i className="fa-solid fa-scale-balanced"></i>
+                            {service.icone}
                         </ServiceIcon>
                         <ServiceCardTitle>
                             <h2>{service.title}</h2>
@@ -120,9 +125,6 @@ function Services() {
                         <ServiceCardText>
                             <p>{service.text}</p>
                         </ServiceCardText>
-                        <BtnMore>
-                            Saiba Mais
-                        </BtnMore>
                         <ClickAnimation>
                             <img src={clickImg} alt="" className="fa-beat" />
                         </ClickAnimation>

@@ -1,13 +1,11 @@
 import React from 'react'
 import { Cards, CardsContainer, CardSubcontainer, CardSubcontainerDescription, CardSubcontainerTitle, Img, Skillcards, BackgroundBlock } from './styles.ts'
 
-import { ReactComponent as CardImg1 } from '../imgs/svgs/undraw_save_to_bookmarks_re_8ajf.svg'
-import { ReactComponent as CardImg2 } from '../imgs/svgs/undraw_appreciate_it_re_yc8h.svg'
-import { ReactComponent as CardImg3 } from '../imgs/svgs/undraw_mobile_content_xvgr.svg'
-import { ReactComponent as CardImg4 } from '../imgs/svgs/undraw_interview_re_e5jn.svg'
+import { ReactComponent as CardImg1 } from '../assets/imgs/svgs/undraw_save_to_bookmarks_re_8ajf.svg'
+import { ReactComponent as CardImg2 } from '../assets/imgs/svgs/undraw_appreciate_it_re_yc8h.svg'
+import { ReactComponent as CardImg3 } from '../assets/imgs/svgs/undraw_mobile_content_xvgr.svg'
+import { ReactComponent as CardImg4 } from '../assets/imgs/svgs/undraw_interview_re_e5jn.svg'
 
-import arrowLeft from '../imgs/arrowLeft.png'
-import arrowRight from '../imgs/arrowRight.png'
 
 function SkillCards() {
     return (

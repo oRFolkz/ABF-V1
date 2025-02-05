@@ -1,10 +1,10 @@
 import React from 'react'
 import { Footer, FooterContainer, FooterSubContainer, LogoSide, InfoSide, ContactBook, FooterInfo, TimeSide, FooterClock, FooterTime, LocationSide, Diretos } from './styles.ts'
 
-import LogoFooter from '../imgs/logos/logofooter.png'
+import LogoFooter from '../assets/imgs/logos/logofooter.png'
 function Location() {
     return (
-        <Footer>
+        <Footer id='scrollLocation'>
             <FooterContainer>
                 <FooterSubContainer>
                     <LogoSide>

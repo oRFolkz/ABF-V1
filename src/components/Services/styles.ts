@@ -22,14 +22,14 @@ export const ServicesContainer = styled.div`
 export const ServiceImg = styled.div`
     img {
         border-radius: 8px 8px 5rem 0;
-        width: 250px;
+        width: 220px;
         height: 400px;
     }
 `
 
 export const ClickAnimation = styled.div`
     position: absolute;
-    top: 430px;
+    top: 420px;
     right: 10px;
     img {	
         width: 20px;
@@ -67,7 +67,7 @@ export const ServiceCardText = styled.div`
     p {
         margin: 0.5rem 0.5rem 1.5rem 0.5rem;
         font-size: 1rem;
-        font-weight: 400;
+        font-weight: 500;
 
         @media ( width < 820px ) {
             font-size: 15px;
@@ -191,7 +191,7 @@ export const ServicesCard = styled.div`
     border: 2px solid ${colors.gold};
     border-radius: 10px;
     transition: all .5s ease;
-    width: 250px;
+    width: 220px;
     height: 650px;
 
     &:hover {
@@ -204,6 +204,7 @@ export const ServicesCard = styled.div`
     }
     
     &.active {
+        cursor: default;
         display: flex;
         width: 1200px;
         text-align: start;

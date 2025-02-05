@@ -24,7 +24,7 @@ export const Header = styled.div`
     z-index: 100;
 `
 
-export const HeaderContainer  = styled.div`
+export const HeaderContainer = styled.div`
     height: 100px;
     max-width: 950px;
     margin: auto;
@@ -53,7 +53,7 @@ export const HeaderContainer  = styled.div`
         margin: 0;
     }
 `
-export const HeaderLogo  = styled.div`
+export const HeaderLogo = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -88,7 +88,7 @@ export const Links = styled.a`
     }
 `
 
-export const BlogHover = styled.a`
+export const Blog = styled.a`
     cursor: pointer;
 
     @media ( width < 960px ) {
@@ -97,7 +97,7 @@ export const BlogHover = styled.a`
     }
 `
 
-export const ServicosHover = styled.div`
+export const Comentarios = styled.div`
     cursor: pointer;
 
     @media ( width < 960px ) {
@@ -105,7 +105,7 @@ export const ServicosHover = styled.div`
     }
 `
 
-export const QuemSomosHover = styled.div`
+export const QuemSomos = styled.div`
     cursor: pointer;
 
     @media ( width < 960px ) {
@@ -113,7 +113,7 @@ export const QuemSomosHover = styled.div`
     }
 `
 
-export const LocalizacaoHover = styled.div`
+export const Localizacao = styled.div`
     cursor: pointer;
 
     @media ( width < 960px ) {
@@ -144,7 +144,7 @@ export const Icons = styled.p`
         height: 10px;
         padding: 0px;
     }
-` 
+`
 
 export const UlPadding = styled.ul`
     color: green;
@@ -154,7 +154,8 @@ export const QuemSomosHoverOptions = styled.div`
     color: green;
 `
 
-export const PeticoesButton = styled.div`
+export const FormularioButton = styled.div`
+    user-select: none;
     align-self: center;
     background-color: transparent;
     border: 2px solid ${colors.gold};
@@ -173,10 +174,6 @@ export const PeticoesButton = styled.div`
 
         i {
             margin-right: 5px;
-        }
-
-        &:hover {
-            color: ${colors.grey};
         }
     }
 
