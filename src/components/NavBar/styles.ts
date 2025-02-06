@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { colors } from '../../styles.ts'
+import { Link } from 'react-router-dom';
 
 export const ShowLinksMobile = styled.div`
     display: none;
@@ -74,7 +75,7 @@ export const Links = styled.a`
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 50%;
+    width: 60%;
 
     @media ( width < 960px ) {
         height: 30px;
@@ -121,6 +122,16 @@ export const Localizacao = styled.div`
     }
 `
 
+export const StyledLink = styled(Link)`
+    font-weight: 600;
+    text-decoration: none;
+    color: ${colors.gold};
+    margin-right: 10px;
+    padding: 5px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+`;
+
 export const Icons = styled.p`
     font-weight: 600;
     text-decoration: none;
@@ -138,11 +149,6 @@ export const Icons = styled.p`
 
     i {
         margin-right: 5px;
-    }
-
-    @media ( width < 960px ) {
-        height: 10px;
-        padding: 0px;
     }
 `
 

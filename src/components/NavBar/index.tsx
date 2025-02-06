@@ -1,5 +1,5 @@
-import React, { useContext } from 'react'
-import { Header, HeaderContainer, HeaderLogo, Links, Blog, Comentarios, Icons, QuemSomos, Localizacao, FormularioButton, IconsHeader, ShowLinksMobile } from './styles.ts'
+import React, { useContext, useState } from 'react'
+import { Header, HeaderContainer, HeaderLogo, Links, Blog, Comentarios, Icons, QuemSomos, Localizacao, FormularioButton, IconsHeader, ShowLinksMobile, StyledLink } from './styles.ts'
 
 import logo from '../assets/imgs/logos/logotipo.png'
 import { FacebookColor, InstagramColor, WhatsAppColor } from '../../styles.ts'
@@ -7,6 +7,8 @@ import { Context } from '../Context.js';
 
 function NavBar() {
     const { toggleForm, setToggleForm } = useContext(Context);
+
+    const [navBar, setNavBar] = useState(false);
 
     const onClickToggleForm = () => {
         setToggleForm(prev => !prev);
@@ -23,7 +25,22 @@ function NavBar() {
                 </HeaderLogo>
                 <Links>
                     <Blog>
-                        <Icons><i className="fa-solid fa-address-card "></i>Blog</Icons>
+                        {navBar ? (
+                            <Icons onClick={() => setNavBar(false)}>
+                                <StyledLink to="/">
+                                    <i className="fa-solid fa-address-card"></i>Home
+                                </StyledLink>
+                            </Icons>
+                        ) : (
+                            <Icons onClick={() => {
+                                setNavBar(true);
+                                window.scrollTo({ top: 0, behavior: 'smooth' })
+                            }}>
+                                <StyledLink to="/blog">
+                                    <i className="fa-solid fa-address-card"></i>Blog
+                                </StyledLink>
+                            </Icons>
+                        )}
                     </Blog>
                     <QuemSomos
                         onClick={() => {
@@ -79,7 +96,7 @@ function NavBar() {
                     </a>
                 </IconsHeader>
             </HeaderContainer>
-        </Header>
+        </Header >
     )
 }
 

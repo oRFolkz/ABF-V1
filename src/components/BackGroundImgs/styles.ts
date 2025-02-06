@@ -22,7 +22,7 @@ export const FormCard = styled.div`
     left: 50%;
     transform: translate(5%, -65%);
     background: ${colors.grey};
-    box-shadow: 14px 16px 20px 0px ${colors.grey};
+    box-shadow: 0px 0px 20px 10px black;
 
     animation: FormDown 1s ease;
 
@@ -42,7 +42,6 @@ export const FormCard = styled.div`
         &:hover {
             border: 2px solid black;
             border-radius: 2px;
-            cursor: pointer;
         }
     }
 
@@ -57,7 +56,6 @@ export const FormCard = styled.div`
         &:hover {
             border: 2px solid black;
             border-radius: 2px;
-            cursor: pointer;
         }
     }
 
