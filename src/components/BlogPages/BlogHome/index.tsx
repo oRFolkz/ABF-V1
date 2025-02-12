@@ -1,63 +1,92 @@
-import React from 'react';
-import { BlogContainer, BlogSubContainer, BlogMainCard, BlogTittle, BlogText, FadeBackground, BlogSubCard, BlogSubImg, BlogSubTittle, BlogSubTxt, BlogInstaContainer, BlogInstaCard, BlogInstaTittle, BlogInstaImg } from './styles.ts'
+import React from "react";
+import SeachBar from "../SeachBar/index.tsx";
+import InstaBanner from "../InstaBanner/index.tsx";
+import {
+  BlogContainer,
+  BlogSubContainer,
+  BlogMainCard,
+  BlogTittle,
+  BlogText,
+  FadeBackground,
+  LogoBackground,
+  AutorMainCard,
+} from "./styles.ts";
 
-import pexelsSora from '../../assets/imgs/pexelsSora.jpg'
-import pexelsChai from '../../assets/imgs/pexelsChai.jpg'
-import Insta from '../../assets/imgs/Insta.png'
+import henrique from "../../assets/imgs/henrique/Henrique7.png";
+
+import background from "../../assets/imgs/pexels.jpg";
+import pexelsDireito from "../../assets/imgs/pexelsSora.jpg";
+import pexelsGuerra from "../../assets/imgs/pexelsChai.jpg";
+import pexelsPolice from "../../assets/imgs/pexelsPolice.jpg";
 function BlogHome() {
+  const info = [
+    {
+      id: 1,
+      BackGroundImg: background,
+      AutorImg: henrique,
+      AutorNome: "Henrique Fernandes",
+      BlogTittle: "TITULO DO ARTIGO",
+      BlogTxt:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum saepe corporis error fuga facere eum sed iure sapiente modi, nostrum aut placeat exercitationem non sit consequatur! Assumenda maxime quaerat non molestiae animi in sit explicabo fuga tenetur, laborum accusamus. Obcaecat",
+    },
+    {
+      id: 2,
+      BackGroundImg: pexelsDireito,
+      AutorImg: henrique,
+      AutorNome: "Henrique Fernandes",
+      BlogTittle: "TITULO DO ARTIGO",
+      BlogTxt:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum saepe corporis error fuga facere eum sed iure sapiente modi, nostrum aut placeat exercitationem non sit consequatur! Assumenda maxime quaerat non molestiae animi in sit explicabo fuga tenetur, laborum accusamus. Obcaecat",
+    },
+    {
+      id: 3,
+      BackGroundImg: pexelsGuerra,
+      AutorImg: henrique,
+      AutorNome: "Henrique Fernandes",
+      BlogTittle: "TITULO DO ARTIGO",
+      BlogTxt:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum saepe corporis error fuga facere eum sed iure sapiente modi, nostrum aut placeat exercitationem non sit consequatur! Assumenda maxime quaerat non molestiae animi in sit explicabo fuga tenetur, laborum accusamus. Obcaecat",
+    },
+    {
+      id: 4,
+      BackGroundImg: pexelsPolice,
+      AutorImg: henrique,
+      AutorNome: "Henrique Fernandes",
+      BlogTittle: "TITULO DO ARTIGO",
+      BlogTxt:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum saepe corporis error fuga facere eum sed iure sapiente modi, nostrum aut placeat exercitationem non sit consequatur! Assumenda maxime quaerat non molestiae animi in sit explicabo fuga tenetur, laborum accusamus. Obcaecat",
+    },
+  ];
 
-    return (
-        <BlogContainer>
-            <BlogSubContainer>
-                <BlogMainCard>
-                    <BlogTittle>
-                        <h2> Direito Civil</h2>
-                    </BlogTittle>
-                    <BlogText>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum saepe corporis error fuga facere eum sed iure sapiente modi, nostrum aut placeat exercitationem non sit consequatur! Assumenda maxime quaerat non molestiae animi in sit explicabo fuga tenetur, laborum accusamus. Obcaecati.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
-                        </p>
-                    </BlogText>
-                    <FadeBackground />
-                </BlogMainCard>
-                <BlogSubCard>
-                    <BlogSubImg>
-                        <img src={pexelsChai} alt="" />
-                    </BlogSubImg>
-                    <BlogSubTittle>
-                        <h2>Direito Civil</h2>
-                    </BlogSubTittle>
-                    <BlogSubTxt>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia, culpa!</p>
-                    </BlogSubTxt>
-                </BlogSubCard>
-                <BlogSubCard>
-                    <BlogSubImg>
-                        <img src={pexelsSora} alt="" />
-                    </BlogSubImg>
-                    <BlogSubTittle>
-                        <h2>Direito Civil</h2>
-                    </BlogSubTittle>
-                    <BlogSubTxt>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia, culpa!</p>
-                    </BlogSubTxt>
-                </BlogSubCard>
-            </BlogSubContainer>
-            <a href="https://www.instagram.com/abf_advogados?igshid=YmMyMTA2M2Y%3D" target="_blank" rel="noreferrer">
-                <BlogInstaContainer>
-                    <BlogInstaCard>
-                        <BlogInstaTittle>
-                            <i className="fa-brands fa-instagram"></i>
-                            <h3>Visite nosso <br></br><span>Instagram</span> para<br></br> mais informações</h3>
-                        </BlogInstaTittle>
-                        <BlogInstaImg>
-                            <img src={Insta} alt="" />
-                        </BlogInstaImg>
-                    </BlogInstaCard>
-                </BlogInstaContainer>
-            </a>
-        </BlogContainer>
-    )
+  return (
+    <BlogContainer>
+      <LogoBackground />
+      <SeachBar />
+      <BlogSubContainer>
+        {info.map((info) => (
+          <>
+            <BlogMainCard
+              style={{ backgroundImage: `url(${info.BackGroundImg})` }}
+              key={info.id}
+            >
+              <AutorMainCard>
+                <img src={info.AutorImg} alt="" />
+                <p>Autor(a) : {info.AutorNome}</p>
+              </AutorMainCard>
+              <BlogTittle>
+                <h2>{info.BlogTittle}</h2>
+              </BlogTittle>
+              <BlogText>
+                <p>{info.BlogTxt}</p>
+              </BlogText>
+              <FadeBackground />
+            </BlogMainCard>
+          </>
+        ))}
+      </BlogSubContainer>
+      <InstaBanner />
+    </BlogContainer>
+  );
 }
 
-export default BlogHome
+export default BlogHome;

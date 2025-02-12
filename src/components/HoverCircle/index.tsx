@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { CircleContainer, BubbleText, BubbleTextInsta, Link, CircleContainerUP, BubbleTextUP } from './styles.ts'
+import { CircleContainer, BubbleText, BubbleTextInsta, Link, CircleContainerUP, BubbleTextUP, GoldenLine } from './styles.ts'
 import { InstagramColor } from '../../styles.ts'
 
 function HoverCircle() {
@@ -20,6 +20,7 @@ function HoverCircle() {
     return (
         <>
             <CircleContainer>
+                <GoldenLine />
                 <Link href="https://api.whatsapp.com/send/?phone=5516992819803&text&type=phone_number&app_absent=0" target="_blank" rel="noreferrer">
                     <BubbleText>
                         <i className="fa-brands fa-whatsapp whatsappIcon"></i>
